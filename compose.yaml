@@ -18,7 +18,7 @@ services:
       # Optional - enable autoscanning a document when loaded into the scanner:
       - MAIN_COMMAND=adf-autoscan
       # If you need to pass additional configuration flag use the CMDLINE env, thy will be appened to the
-      # - CMDLINE=--debug --pdf
+      - CMDLINE= --pdf
       # If using Paperless-ngx, you can use its API to upload files:
       - PAPERLESS_POST_DOCUMENT_URL=http://paperless.home.theschenks.ch:8000/api/documents/post_document/
       - PAPERLESS_TOKEN=305df9f091082b6ab4dd1a87b67ed7cbf129867d
