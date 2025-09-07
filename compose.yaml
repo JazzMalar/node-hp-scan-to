@@ -16,7 +16,7 @@ services:
       - PGID=1000
       - PUID=1000
       # Optional - enable autoscanning a document when loaded into the scanner:
-      # - MAIN_COMMAND=adf-autoscan
+      - MAIN_COMMAND=adf-autoscan
       # If you need to pass additional configuration flag use the CMDLINE env, thy will be appened to the
       # - CMDLINE=--debug --pdf
       # If using Paperless-ngx, you can use its API to upload files:
