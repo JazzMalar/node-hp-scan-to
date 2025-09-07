@@ -1,0 +1,26 @@
+services:
+  node-hp-scan-to:
+    image: docker.io/manuc66/node-hp-scan-to:latest
+    restart: unless-stopped
+    hostname: printer-to-paperless
+    environment:
+      # REQUIRED - Change the next line to the IP address of your HP printer/scanner:
+      - IP=192.168.2.79
+      # Name that your container will appear as to your printer:
+      - LABEL=node-hp-scan-to
+      # Set the timezone, such as "Europe/London":
+      - TZ=Europe/Zurich
+      # Set the created filename pattern:
+      - PATTERN="scan"_dd-mm-yyyy_hh-MM-ss
+      # Run the Docker container as the same user ID as the host system:
+      - PGID=1000
+      - PUID=1000
+      # Optional - enable autoscanning a document when loaded into the scanner:
+      # - MAIN_COMMAND=adf-autoscan
+      # If you need to pass additional configuration flag use the CMDLINE env, thy will be appened to the
+      # - CMDLINE=--debug --pdf
+      # If using Paperless-ngx, you can use its API to upload files:
+      - PAPERLESS_POST_DOCUMENT_URL=http://paperless.home.theschenks.ch:8000/api/documents/post_document/
+      - PAPERLESS_TOKEN=034b3887de29b70f796fb7de94644ba56bc3f72f
+    volumes:
+      - ./scan:/scan
