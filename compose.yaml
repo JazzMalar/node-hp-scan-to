@@ -23,4 +23,4 @@ services:
       - PAPERLESS_POST_DOCUMENT_URL=http://paperless.home.theschenks.ch:8000/api/documents/post_document/
       - PAPERLESS_TOKEN=034b3887de29b70f796fb7de94644ba56bc3f72f
     volumes:
-      - ./scan:/scan
+      - ./mnt/paperless/consume:/scan
